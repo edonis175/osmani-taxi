@@ -280,21 +280,20 @@ const Home = () => {
           {/* Hero Text with Modern Typography */}
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-2"></div>
-            <h2
+            <h3
               className={`scroll-animate text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-100 via-gray-300 to-gray-100 bg-clip-text text-transparent leading-tight`}
               data-id="creative-title"
             >
-              <span className="text-black font-bold text-7xl">
+              <p className="text-black font-bold text-7xl md:text-6xl lg:text-7xl md:ml-0 ml-[-11px]">
                 Experience the
-              </span>
-              <br />
+              </p>
               <span
                 className="bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text text-transparent font-bold text-6xl pt-2"
                 style={{ marginTop: "30px" }}
               >
                 Future of Travel
               </span>
-            </h2>
+            </h3>
             <p
               className={`scroll-animate text-xl max-w-3xl mx-auto leading-relaxed text-gray-600`}
               data-id="creative-subtitle"
@@ -320,7 +319,7 @@ const Home = () => {
               >
                 <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full flex items-center justify-center  group-hover:scale-125 transition-transform duration-500">
                   <svg
-                    className="w-6 h-6 text-white group-hover:animate-pulse"
+                    className="w-6 h-6 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

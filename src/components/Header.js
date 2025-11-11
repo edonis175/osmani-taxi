@@ -80,16 +80,16 @@ const Header = () => {
             />
           </div>
 
-          <div className="hidden md:flex space-x-2 items-center ml-auto mr-4">
-            <NavLink to="/" label="Home" />
-            <NavLink to="/about" label="About" />
-            <NavLink to="/services" label="Services" />
-            <NavLink to="/popular-places" label="Popular Places" />
-            <NavLink to="/fleet" label="Fleet" />
-            <NavLink to="/contact" label="Contact" />
-          </div>
+          <div className="flex items-center ml-auto space-x-4">
+            <div className="hidden md:flex space-x-2 items-center">
+              <NavLink to="/" label="Home" />
+              <NavLink to="/about" label="About" />
+              <NavLink to="/services" label="Services" />
+              <NavLink to="/popular-places" label="Popular Places" />
+              <NavLink to="/fleet" label="Fleet" />
+              <NavLink to="/contact" label="Contact" />
+            </div>
 
-          <div className="flex items-center">
             <button
               className="md:hidden text-gray-800 transition-all duration-300 transform hover:scale-110 hover:text-orange-500"
               onClick={() => setIsMenuOpen(!isMenuOpen)}

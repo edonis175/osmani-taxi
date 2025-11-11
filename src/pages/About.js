@@ -166,16 +166,9 @@ const TimelineSection = ({ milestones }) => {
                     {milestone.title}
                   </div>
                 </div>
-                <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300 text-center">
+                <p className="text-white font-bold leading-relaxed group-hover:text-white transition-colors duration-300 text-center">
                   {milestone.description}
                 </p>
-                <div className="flex justify-center mt-6">
-                  <img
-                    src={require("../assets/images/osmanileaf.png")}
-                    alt="OSMANI Leaf"
-                    className="h-12 w-auto"
-                  />
-                </div>
               </div>
               {/* Connector line for mobile - only show if not last item */}
               {index < milestones.length - 1 && (
@@ -507,7 +500,7 @@ const About = () => {
                   vehicle initiative and sustainable operations, setting new
                   standards for eco-friendly transportation.
                 </p>
-                <div
+                {/* <div
                   className={`flex justify-center mt-6 ${getAnimationClasses(
                     "up",
                     visibleItems.includes("1"),
@@ -519,7 +512,7 @@ const About = () => {
                     alt="OSMANI Leaf"
                     className="h-16 w-auto"
                   />
-                </div>
+                </div> */}
               </div>
               <div
                 className={`relative ${getAnimationClasses(

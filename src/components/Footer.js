@@ -16,7 +16,8 @@ const Footer = () => {
             {/* Social Media Icons */}
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://x.com/edonis_osmani1"
+                target="_blank"
                 className="group w-12 h-12 flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:text-blue-400 cursor-pointer"
               >
                 <svg
@@ -28,7 +29,8 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/edonis.osmani.90"
+                target="_blank"
                 className="group w-12 h-12 flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:text-blue-600 cursor-pointer"
               >
                 <svg
@@ -40,7 +42,8 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/edonis__osmanii/"
+                target="_blank"
                 className="group w-12 h-12 flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:text-red-500 cursor-pointer"
               >
                 <svg
