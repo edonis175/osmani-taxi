@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink as RouterNavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
   // Initialize state based on actual scroll position to prevent flash
@@ -197,33 +197,65 @@ const Header = () => {
 
 const NavLink = ({ to, label }) => {
   const location = useLocation();
-  const isActive = location.pathname === to;
-
+  
+  // Enhanced active detection: explicitly check location for home route
+  const isHomeRoute = to === "/";
+  const pathname = location.pathname;
+  
+  // Check if this route is active
+  const checkIsActive = (isActive) => {
+    if (isHomeRoute) {
+      // For home route, check if pathname is "/" or empty (handles various scenarios)
+      return pathname === "/" || pathname === "" || isActive;
+    }
+    return isActive;
+  };
+  
   return (
-    <Link
+    <RouterNavLink
       to={to}
-      className={`text-lg px-4 py-2 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 font-medium ${
-        isActive ? "text-orange-500" : "text-gray-700 hover:text-orange-500"
-      }`}
+      end={isHomeRoute}
+      className={({ isActive }) => {
+        const active = checkIsActive(isActive);
+        return `text-lg px-4 py-2 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 font-medium ${
+          active ? "!text-orange-500" : "text-gray-700 hover:text-orange-500"
+        }`;
+      }}
     >
       {label}
-    </Link>
+    </RouterNavLink>
   );
 };
 
 const MobileNavLink = ({ to, label }) => {
   const location = useLocation();
-  const isActive = location.pathname === to;
-
+  
+  // Enhanced active detection: explicitly check location for home route
+  const isHomeRoute = to === "/";
+  const pathname = location.pathname;
+  
+  // Check if this route is active
+  const checkIsActive = (isActive) => {
+    if (isHomeRoute) {
+      // For home route, check if pathname is "/" or empty (handles various scenarios)
+      return pathname === "/" || pathname === "" || isActive;
+    }
+    return isActive;
+  };
+  
   return (
-    <Link
+    <RouterNavLink
       to={to}
-      className={`block w-full text-center py-4 px-6 rounded-xl text-lg transition-all duration-300 font-medium ${
-        isActive ? "text-orange-500" : "text-gray-700 hover:text-orange-500"
-      }`}
+      end={isHomeRoute}
+      className={({ isActive }) => {
+        const active = checkIsActive(isActive);
+        return `block w-full text-center py-4 px-6 rounded-xl text-lg transition-all duration-300 font-medium ${
+          active ? "!text-orange-500" : "text-gray-700 hover:text-orange-500"
+        }`;
+      }}
     >
       {label}
-    </Link>
+    </RouterNavLink>
   );
 };
 

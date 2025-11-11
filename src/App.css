@@ -247,3 +247,10 @@
 }
 
 /* Enhanced navbar link transitions */
+
+/* Ensure active navbar links are always orange on all devices */
+/* Tailwind's !text-orange-500 already handles this, but adding extra specificity for reliability */
+a.text-orange-500,
+a[class*="!text-orange-500"] {
+  color: #f97316 !important;
+}

@@ -121,12 +121,37 @@ const TimelineSection = ({ milestones }) => {
       },
       {
         threshold: 0.3,
+        // small rootMargin to ensure elements near the viewport are detected
         rootMargin: "50px",
       }
     );
 
     const timelineItems = document.querySelectorAll(".timeline-item");
     timelineItems.forEach((item) => observer.observe(item));
+
+    // Fallback: on some mobile browsers a refresh can leave elements already
+    // in-view but IntersectionObserver callbacks may not fire immediately.
+    // Check bounding rects and mark items visible on mount if they are in the
+    // viewport — this ensures the timeline is visible after a refresh.
+    try {
+      const initiallyVisible = [];
+      timelineItems.forEach((item) => {
+        const rect = item.getBoundingClientRect();
+        const index = parseInt(item.dataset.index);
+        // Consider the item visible if any part of it is within the viewport
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          if (!initiallyVisible.includes(index)) initiallyVisible.push(index);
+        }
+      });
+      if (initiallyVisible.length > 0) {
+        setVisibleItems((prev) => {
+          const merged = Array.from(new Set([...prev, ...initiallyVisible]));
+          return merged.sort((a, b) => a - b);
+        });
+      }
+    } catch (e) {
+      // ignore in non-browser env
+    }
 
     return () => observer.disconnect();
   }, []);
@@ -159,7 +184,7 @@ const TimelineSection = ({ milestones }) => {
             >
               <div className="group bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105">
                 <div className="text-center mb-6">
-                  <div className="text-3xl font-bold text-yellow-400 mb-1">
+                  <div className="text-3xl font-bold text-orange-400 mb-1">
                     {milestone.year}
                   </div>
                   <div className="text-xl font-bold text-white">
@@ -209,14 +234,14 @@ const TimelineSection = ({ milestones }) => {
                     <div className="w-1/2 pr-12 text-right">
                       <div className="group bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105">
                         <div className="text-center mb-6">
-                          <div className="text-3xl font-bold text-yellow-400 mb-1">
+                          <div className="text-3xl font-bold text-orange-400 mb-1">
                             {milestone.year}
                           </div>
                           <div className="text-xl font-bold text-white">
                             {milestone.title}
                           </div>
                         </div>
-                        <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300 text-center">
+                        <p className="text-white font-bold leading-relaxed group-hover:text-white transition-colors duration-300 text-center">
                           {milestone.description}
                         </p>
                       </div>
@@ -240,14 +265,14 @@ const TimelineSection = ({ milestones }) => {
                     <div className="w-1/2 pl-12">
                       <div className="group bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105">
                         <div className="text-center mb-6">
-                          <div className="text-3xl font-bold text-yellow-400 mb-1">
+                          <div className="text-3xl font-bold text-orange-400 mb-1">
                             {milestone.year}
                           </div>
                           <div className="text-xl font-bold text-white">
                             {milestone.title}
                           </div>
                         </div>
-                        <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300 text-center">
+                        <p className="text-white font-semibold leading-relaxed group-hover:text-white transition-colors duration-300 text-center">
                           {milestone.description}
                         </p>
                       </div>
