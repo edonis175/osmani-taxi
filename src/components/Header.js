@@ -197,11 +197,11 @@ const Header = () => {
 
 const NavLink = ({ to, label }) => {
   const location = useLocation();
-  
+
   // Enhanced active detection: explicitly check location for home route
   const isHomeRoute = to === "/";
   const pathname = location.pathname;
-  
+
   // Check if this route is active
   const checkIsActive = (isActive) => {
     if (isHomeRoute) {
@@ -210,7 +210,7 @@ const NavLink = ({ to, label }) => {
     }
     return isActive;
   };
-  
+
   return (
     <RouterNavLink
       to={to}
@@ -229,11 +229,11 @@ const NavLink = ({ to, label }) => {
 
 const MobileNavLink = ({ to, label }) => {
   const location = useLocation();
-  
+
   // Enhanced active detection: explicitly check location for home route
   const isHomeRoute = to === "/";
   const pathname = location.pathname;
-  
+
   // Check if this route is active
   const checkIsActive = (isActive) => {
     if (isHomeRoute) {
@@ -242,7 +242,7 @@ const MobileNavLink = ({ to, label }) => {
     }
     return isActive;
   };
-  
+
   return (
     <RouterNavLink
       to={to}
