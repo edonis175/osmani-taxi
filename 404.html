@@ -2,38 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="/osmani-taxi/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="OSMANI TAXI - Premium Transportation Services in KOSOVA"
     />
+    <link rel="apple-touch-icon" href="/osmani-taxi/favicon.ico" />
+    <link rel="manifest" href="/osmani-taxi/manifest.json" />
     <title>OSMANI TAXI - Premium Transportation Services</title>
     <script>
-      // SPA redirect for GitHub Pages (project pages)
-      (function () {
-        var l = window.location;
-        var pathSegmentsToKeep = 2; // e.g. /username/repo => keep 2
-        var redirectUrl =
-          l.protocol +
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // This script takes the current url and converts the path and query
+      // string into just a query string, and then redirects the browser to the
+      // new url with only a query string and hash fragment,
+      // e.g., https://www.foo.com/one/two?a=b&c=d#qwe, becomes
+      // https://www.foo.com/?/one/two&a=b~and~c=d#qwe
+      // Note: this 404.html file must be at least 512 bytes for it to work
+      // with Internet Explorer (it is currently > 512 bytes)
+
+      // If you're creating a Project Pages site and NOT using a custom domain,
+      // then set pathSegmentsToKeep to 1 (enterprise users: set pathSegmentsToKeep to 2).
+      // This way the code will only replace the route part and not the real directory.
+      // For example, if your app is served from https://username.github.io/repo-name/,
+      // then by default the redirect would become:
+      // https://username.github.io/repo-name/?/repo-name/one/two&a=b~and~c=d#qwe
+      // But with pathSegmentsToKeep set to 1, it will become:
+      // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
+      var pathSegmentsToKeep = 1;
+
+      var l = window.location;
+      l.replace(
+        l.protocol +
           "//" +
           l.hostname +
           (l.port ? ":" + l.port : "") +
-          l.pathname.split("/").slice(0, pathSegmentsToKeep).join("/") +
-          "/?p=" +
           l.pathname
             .split("/")
-            .slice(pathSegmentsToKeep)
-            .join("/")
-            .replace(/\//g, "~slash~") +
-          (l.search ? "&q=" + l.search.slice(1).replace(/&/g, "~and~") : "") +
-          l.hash;
-        l.replace(redirectUrl);
-      })();
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join("/") +
+          "/?/" +
+          l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/") +
+          (l.search ? "&" + l.search.slice(1) : "") +
+          l.hash
+      );
     </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
   </body>
 </html>
