@@ -1291,7 +1291,7 @@ const PopularPlaces = () => {
                       </div>
                     </div>
 
-                    {/* AI City Fact */}
+                    {/* AI-Generated Fascinating Fact */}
                     <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 mb-6">
                       <h4 className="text-lg font-bold text-gray-800 mb-3 flex items-center">
                         <svg
@@ -1338,29 +1338,6 @@ const PopularPlaces = () => {
                         </svg>
                         Book Ride to {aiResult.cityName}
                       </Link>
-
-                      <button
-                        onClick={() => {
-                          setAiResult(null);
-                          setSearchTerm("");
-                        }}
-                        className="flex-1 bg-gray-600 hover:bg-gray-700 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
-                      >
-                        <svg
-                          className="w-5 h-5 mr-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                          />
-                        </svg>
-                        Search Another City
-                      </button>
                     </div>
                   </div>
                 )}

@@ -259,7 +259,7 @@ const Contact = () => {
                     <span className="font-medium">Visa</span>
                   </div>
                   <div className="flex items-center px-4 py-2 bg-gray-100 rounded-lg">
-                    <span className="text-2xl mr-2">💳</span>
+                    <span className="text-2xl mr-2"></span>
                     <span className="font-medium">Mastercard</span>
                   </div>
                   <div className="flex items-center px-4 py-2 bg-gray-100 rounded-lg">

@@ -266,80 +266,37 @@ const Services = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20">
-          <div className="max-w-6xl mx-auto">
+        <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 ">
+          <div className="max-w-6xl mx-auto pb-20 background-blur-sm">
             <h1
               className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 sm:mb-8 leading-tight animate-fade-in-left`}
             >
-              <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent  ">
                 Premium
               </span>
               <br />
               <span className="text-white">Services</span>
             </h1>
             <p
-              className={`text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 font-light leading-relaxed px-2 animate-fade-in-right`}
-            >
-              Luxury Transportation Solutions for Every Need
-            </p>
-            <p
-              className={`text-base sm:text-lg md:text-xl mb-8 sm:mb-12 text-gray-200 max-w-5xl mx-auto leading-relaxed px-4 animate-fade-in-left`}
+              className={`text-base sm:text-lg md:text-xl mb-8 sm:mb-12 text-gray-200 max-w-5xl mt-30 leading-relaxed px-4 animate-fade-in-right`}
             >
               From quick city rides to special events, discover our
               comprehensive range of premium transportation services designed to
               exceed your expectations and elevate every journey.
             </p>
-
-            <div
-              className={`grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 px-4 animate-fade-in-up`}
-            >
-              <div className="group transform hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-400 mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
-                  <AnimatedCounter end={9} />
-                </div>
-                <div className="text-xs sm:text-sm text-gray-300">
-                  Premium Services
-                </div>
-              </div>
-              <div className="group transform hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-orange-400 mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
-                  <AnimatedCounter end={24} suffix="/7" />
-                </div>
-                <div className="text-xs sm:text-sm text-gray-300">
-                  Available
-                </div>
-              </div>
-              <div className="group transform hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-red-400 mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
-                  <AnimatedCounter end={99} suffix=".8%" />
-                </div>
-                <div className="text-xs sm:text-sm text-gray-300">
-                  Satisfaction
-                </div>
-              </div>
-              <div className="group transform hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-pink-400 mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
-                  <AnimatedCounter end={1} prefix="#" />
-                </div>
-                <div className="text-xs sm:text-sm text-gray-300">
-                  In KOSOVA
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
         {/* Scroll Down Button */}
         <ScrollDownButton targetId="services-section" />
       </div>
-
       {/* Services Introduction Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4 relative inline-block">
               <span className="relative z-10 text-black">
-                Our Premium Transportation Services
+                Our Premium Transportation Info
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-6">
@@ -352,10 +309,7 @@ const Services = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-1 bg-white/80 backdrop-blur-xl p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 ease transform hover:-translate-y-2 flex flex-col border border-white/30 group">
-              <div className="relative mb-6">
-                <div className="absolute -top-8 -left-8 w-24 h-24 bg-gradient-to-br from-orange-400 to-red-500 rounded-full opacity-20 blur-xl"></div>
-                <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20 blur-xl"></div>
-              </div>
+              <div className="relative mb-6"></div>
               <h3 className="text-3xl font-bold text-gray-800 mb-4 ">
                 Professional Drivers
               </h3>
@@ -380,10 +334,7 @@ const Services = () => {
             </div>
 
             <div className="lg:col-span-1 bg-white/80 backdrop-blur-xl p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 ease transform hover:-translate-y-2 flex flex-col border border-white/30 group">
-              <div className="relative mb-6">
-                <div className="absolute -top-8 -left-8 w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 blur-xl"></div>
-                <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full opacity-20 blur-xl"></div>
-              </div>
+              <div className="relative mb-6"></div>
               <h3 className="text-3xl font-bold text-gray-800 mb-4">
                 Punctual Service
               </h3>
@@ -408,10 +359,7 @@ const Services = () => {
             </div>
 
             <div className="lg:col-span-1 bg-white/80 backdrop-blur-xl p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 ease transform hover:-translate-y-2 flex flex-col border border-white/30 group">
-              <div className="relative mb-6">
-                <div className="absolute -top-8 -left-8 w-24 h-24 bg-gradient-to-br from-green-400 to-teal-500 rounded-full opacity-20 blur-xl"></div>
-                <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full opacity-20 blur-xl"></div>
-              </div>
+              <div className="relative mb-6"></div>
               <h3 className="text-3xl font-bold text-gray-800 mb-4 ">
                 Quality Vehicles
               </h3>
@@ -437,10 +385,9 @@ const Services = () => {
           </div>
         </div>
       </section>
-
       {/* Services Section */}
       <section
-        id="services-section"
+        id="services-section-cards"
         className="py-20 bg-gradient-to-br from-gray-50 to-gray-100"
       >
         <div className="container mx-auto px-4">
@@ -509,7 +456,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-
       {/* Booking Popup Modal */}
       {isPopupOpen && selectedService && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -601,7 +547,6 @@ const Services = () => {
           </div>
         </div>
       )}
-
       {/* Simple CTA Section */}
       <section className="py-16 bg-gray-900 backdrop-blur-sm text-white mb-0.5">
         <div className="container mx-auto px-4 text-center">
@@ -610,14 +555,13 @@ const Services = () => {
             Contact us today for reliable, comfortable service throughout KOSOVA
           </p>
           <Link
-            to="/contact"
+            to="/contact#contact-form"
             className="inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold py-3 px-8 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all transform hover:scale-105 backdrop-blur-sm"
           >
             Book Your Ride
           </Link>
         </div>
       </section>
-
       {/* Scroll to Top Button */}
       <ScrollToTopButton />
     </div>

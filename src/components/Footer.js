@@ -108,7 +108,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  to="/popular-places"
+                  to="#"
                   className={`text-gray-400 hover:text-yellow-500 transition duration-300`}
                 >
                   Popular Places
@@ -116,7 +116,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services"
+                  to="#"
                   className={`text-gray-400 hover:text-yellow-500 transition duration-300`}
                 >
                   Airport Transfer
@@ -124,7 +124,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services"
+                  to="#"
                   className={`text-gray-400 hover:text-yellow-500 transition duration-300`}
                 >
                   Corporate Travel

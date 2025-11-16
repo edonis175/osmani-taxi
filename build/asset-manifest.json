@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/osmani-taxi/static/css/main.c5f94eaf.css",
-    "main.js": "/osmani-taxi/static/js/main.6ecd52f8.js",
+    "main.css": "/osmani-taxi/static/css/main.62b55804.css",
+    "main.js": "/osmani-taxi/static/js/main.153fc851.js",
     "static/js/488.d80753d7.chunk.js": "/osmani-taxi/static/js/488.d80753d7.chunk.js",
     "static/media/mitrovica.jpeg": "/osmani-taxi/static/media/mitrovica.80cc0ca307388cb6be5b.jpeg",
     "static/media/gjakova.jpg": "/osmani-taxi/static/media/gjakova.a1e72b4150c4f1358854.jpg",
@@ -17,12 +17,12 @@
     "static/media/osmaniTlogo.png": "/osmani-taxi/static/media/osmaniTlogo.39de9e1175fe9aab69cd.png",
     "static/media/osmanileaf.png": "/osmani-taxi/static/media/osmanileaf.5317ab89a3aa81baa079.png",
     "index.html": "/osmani-taxi/index.html",
-    "main.c5f94eaf.css.map": "/osmani-taxi/static/css/main.c5f94eaf.css.map",
-    "main.6ecd52f8.js.map": "/osmani-taxi/static/js/main.6ecd52f8.js.map",
+    "main.62b55804.css.map": "/osmani-taxi/static/css/main.62b55804.css.map",
+    "main.153fc851.js.map": "/osmani-taxi/static/js/main.153fc851.js.map",
     "488.d80753d7.chunk.js.map": "/osmani-taxi/static/js/488.d80753d7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5f94eaf.css",
-    "static/js/main.6ecd52f8.js"
+    "static/css/main.62b55804.css",
+    "static/js/main.153fc851.js"
   ]
 }

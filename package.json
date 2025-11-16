@@ -1,5 +1,5 @@
 {
-  "homepage": "edonis175.github.io/osmani-taxi/",
+  "homepage": "https://edonis175.github.io/osmani-taxi/",
   "dependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
