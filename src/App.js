@@ -21,10 +21,9 @@ import PopularPlaces from "./pages/PopularPlaces";
 import RouteCalculator from "./pages/RouteCalculator";
 
 function App() {
-  // Use /osmani-taxi as basename for GitHub Pages deployment
-  const basename = process.env.PUBLIC_URL
-    ? new URL(process.env.PUBLIC_URL).pathname
-    : "/osmani-taxi";
+  // Use /osmani-taxi as basename for GitHub Pages deployment only
+  // In local development, use empty basename
+  const basename = process.env.NODE_ENV === "production" ? "/osmani-taxi" : "";
 
   return (
     <Router basename={basename}>
