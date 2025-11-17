@@ -34,29 +34,20 @@
       var pathSegmentsToKeep = 1;
 
       var l = window.location;
-      var pathname = l.pathname;
-      var pathSegments = pathname.split("/").filter(Boolean);
-
-      // Extract the route part (everything after the base path segments)
-      var routeSegments = pathSegments.slice(pathSegmentsToKeep);
-      var route = routeSegments.join("/");
-
-      // Build the base path
-      var basePath = "/" + pathSegments.slice(0, pathSegmentsToKeep).join("/");
-
-      // Build the redirect URL
-      var redirectUrl =
+      l.replace(
         l.protocol +
-        "//" +
-        l.hostname +
-        (l.port ? ":" + l.port : "") +
-        basePath +
-        "/?/" +
-        route +
-        (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
-        l.hash;
-
-      l.replace(redirectUrl);
+          "//" +
+          l.hostname +
+          (l.port ? ":" + l.port : "") +
+          l.pathname
+            .split("/")
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join("/") +
+          "/?/" +
+          l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/") +
+          (l.search ? "&" + l.search.slice(1) : "") +
+          l.hash
+      );
     </script>
   </head>
   <body>
