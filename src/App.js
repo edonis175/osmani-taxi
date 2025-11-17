@@ -21,16 +21,10 @@ import PopularPlaces from "./pages/PopularPlaces";
 import RouteCalculator from "./pages/RouteCalculator";
 
 function App() {
-  const basename = (() => {
-    if (process.env.PUBLIC_URL) {
-      try {
-        return new URL(process.env.PUBLIC_URL).pathname || "/";
-      } catch (e) {
-        return "/";
-      }
-    }
-    return "/";
-  })();
+  // Use /osmani-taxi as basename for GitHub Pages deployment
+  const basename = process.env.PUBLIC_URL
+    ? new URL(process.env.PUBLIC_URL).pathname
+    : "/osmani-taxi";
 
   return (
     <Router basename={basename}>
