@@ -7,6 +7,7 @@ import {
 } from "../hooks/useScrollAnimation";
 import ScrollToTopButton from "../contexts/ScrollToTopButton";
 import ScrollDownButton from "../contexts/ScrollDownButton";
+import { vehicles } from "../data/vehicles";
 
 // Import city images
 import prishtinaImg from "../assets/images/prishtina.jpg";
@@ -19,7 +20,22 @@ import gjilanImg from "../assets/images/gjilan.jpg";
 import podujevaImg from "../assets/images/podujeva.jpg";
 import vushtrriImg from "../assets/images/vushtrri.jpg";
 import suharekaImg from "../assets/images/suhareka.jpg";
-
+import rahovecImg from "../assets/images/Rahoveci.png";
+import malishevaImg from "../assets/images/malisheva.jpg";
+import lipjanImg from "../assets/images/Lipjan.png";
+import drenasImg from "../assets/images/Drenas.png";
+import shtimeImg from "../assets/images/Shtime.png";
+import kacanikImg from "../assets/images/Kaçanik.png";
+import kamenicaImg from "../assets/images/Kamenica.png";
+import skenderajImg from "../assets/images/Skenderaj.png";
+import fusheKosovaImg from "../assets/images/Fushë_Kosovë.png";
+import obiliqImg from "../assets/images/Obiliq.png";
+import istogImg from "../assets/images/Istog.png";
+import klinaImg from "../assets/images/Klina.png";
+import dragashImg from "../assets/images/Dragash.png";
+import decanImg from "../assets/images/Decan.png";
+import junikImg from "../assets/images/Junik.jpg";
+import mamusheImg from "../assets/images/Mamushe.jpg";
 // Counter animation component
 const AnimatedCounter = ({
   end,
@@ -71,6 +87,283 @@ const AnimatedCounter = ({
       {count}
       {suffix}
     </span>
+  );
+};
+
+// Vehicle Selection Popup Component
+const VehicleSelectionPopup = ({ city, isOpen, onClose, onSelectVehicle }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-3xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="p-8">
+          <div className="flex justify-between items-center mb-6">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-800">
+                Select Your Vehicle
+              </h2>
+              <p className="text-gray-600 mt-2">
+                Choose a vehicle for your trip to {city?.name}
+              </p>
+            </div>
+            <button
+              onClick={onClose}
+              className="text-gray-500 hover:text-gray-700 text-2xl"
+            >
+              &times;
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {vehicles.map((vehicle, index) => (
+              <div
+                key={index}
+                className="group relative bg-white rounded-2xl border-2 border-gray-200 hover:border-yellow-400 overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl cursor-pointer"
+                onClick={() => onSelectVehicle(vehicle)}
+              >
+                {/* Badge */}
+                {vehicle.badge && (
+                  <div
+                    className={`absolute top-4 left-4 z-20 px-3 py-1 bg-gradient-to-r ${vehicle.gradient} text-white font-bold rounded-full text-xs shadow-lg`}
+                  >
+                    {vehicle.badge}
+                  </div>
+                )}
+
+                {/* Image */}
+                <div className="relative overflow-hidden">
+                  <img
+                    src={vehicle.image}
+                    alt={vehicle.type}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent group-hover:from-black/50 transition-all duration-500"></div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2 text-gray-800">
+                    {vehicle.type}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                    {vehicle.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div
+                      className={`px-4 py-2 bg-gradient-to-r ${vehicle.gradient} text-white font-bold rounded-xl text-lg`}
+                    >
+                      {vehicle.price}
+                    </div>
+                    <button
+                      className={`px-4 py-2 bg-gradient-to-r ${vehicle.gradient} text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
+                    >
+                      Select
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Booking Form Popup Component
+const BookingPopup = ({ city, vehicle, isOpen, onClose, onSubmit }) => {
+  const [bookingData, setBookingData] = useState({
+    name: "",
+    phone: "",
+    location: "",
+    destination: "",
+    date: "",
+    time: "",
+  });
+
+  const handleChange = (e) => {
+    setBookingData({
+      ...bookingData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit({
+      ...bookingData,
+      cityName: city?.name,
+      vehicleType: vehicle?.type,
+      distance: city?.distance,
+      price: city?.price,
+    });
+    onClose();
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="p-8">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-3xl font-bold text-gray-800">Book Your Ride</h2>
+            <button
+              onClick={onClose}
+              className="text-gray-500 hover:text-gray-700 text-2xl"
+            >
+              &times;
+            </button>
+          </div>
+
+          {/* City and Vehicle Info */}
+          <div className="mb-6 p-6 bg-gray-50 rounded-2xl">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-600">
+                  Destination
+                </h3>
+                <p className="text-2xl font-bold text-gray-800">{city?.name}</p>
+              </div>
+              <div className="text-right">
+                <h3 className="text-lg font-semibold text-gray-600">
+                  Distance
+                </h3>
+                <p className="text-2xl font-bold text-gray-800">
+                  {city?.distance} km
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center border-t pt-4">
+              <img
+                src={vehicle?.image}
+                alt={vehicle?.type}
+                className="w-24 h-24 object-cover rounded-xl mr-6"
+              />
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-gray-800">
+                  {vehicle?.type}
+                </h3>
+                <p className="text-lg font-semibold text-gray-700">
+                  {vehicle?.price}
+                </p>
+                {city?.price && (
+                  <p className="text-sm text-gray-600 mt-1">
+                    Estimated total: €{city.price.toFixed(2)}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <form onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label className="block text-gray-700 font-semibold mb-2">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={bookingData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter your full name"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700 font-semibold mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={bookingData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700 font-semibold mb-2">
+                  Pickup Location
+                </label>
+                <input
+                  type="text"
+                  name="location"
+                  value={bookingData.location}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter pickup location"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700 font-semibold mb-2">
+                  Destination
+                </label>
+                <input
+                  type="text"
+                  name="destination"
+                  value={city?.name || ""}
+                  readOnly
+                  disabled
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-gray-100 cursor-not-allowed text-gray-600"
+                  placeholder="Destination City"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700 font-semibold mb-2">
+                  Date
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  value={bookingData.date}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700 font-semibold mb-2">
+                  Time
+                </label>
+                <input
+                  type="time"
+                  name="time"
+                  value={bookingData.time}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button
+                type="button"
+                onClick={onClose}
+                className="flex-1 px-6 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-2xl hover:border-gray-400 hover:bg-gray-50 transition-all duration-300"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className={`flex-1 px-6 py-4 bg-gradient-to-r ${
+                  vehicle?.gradient || "from-yellow-500 to-orange-500"
+                } text-white font-bold rounded-2xl transition-all duration-300 hover:shadow-xl`}
+              >
+                Confirm Booking
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -164,6 +457,11 @@ const PopularPlaces = () => {
   const [aiResult, setAiResult] = useState(null);
   const [isCalculating, setIsCalculating] = useState(false);
   const [showAllCities, setShowAllCities] = useState(false);
+  const [showVehicleSelection, setShowVehicleSelection] = useState(false);
+  const [showBookingPopup, setShowBookingPopup] = useState(false);
+  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
+  const [showNotification, setShowNotification] = useState(false);
 
   // Comprehensive AI-powered city facts and route calculation for all KOSOVA cities
   const cityData = {
@@ -608,7 +906,7 @@ const PopularPlaces = () => {
       name: "Rahovec",
       distance: 70,
       price: 58.0,
-      image: prizrenImg,
+      image: rahovecImg,
       description:
         "KOSOVA's premier wine region surrounded by rolling vineyard hills, featuring the famous Wine Route connecting 12 historic wineries.",
       attractions: [
@@ -625,7 +923,7 @@ const PopularPlaces = () => {
       name: "Malisheva",
       distance: 50,
       price: 42.0,
-      image: gjakovaImg,
+      image: malishevaImg,
       description:
         "Nestled in the Dukagjini Plain foothills, famous for traditional crafts including woodcarving and metalwork passed through generations.",
       attractions: [
@@ -642,7 +940,7 @@ const PopularPlaces = () => {
       name: "Lipjan",
       distance: 30,
       price: 26.0,
-      image: vushtrriImg,
+      image: lipjanImg,
       description:
         "Historically known as Lipljan, featuring important Roman archaeological sites and a museum with 2,000-year-old artifacts.",
       attractions: [
@@ -659,7 +957,7 @@ const PopularPlaces = () => {
       name: "Drenas",
       distance: 20,
       price: 18.0,
-      image: podujevaImg,
+      image: drenasImg,
       description:
         "Located in the heart of Drenica valley, known for its pivotal role in KOSOVA's independence movement and stunning natural landscapes.",
       attractions: [
@@ -676,7 +974,7 @@ const PopularPlaces = () => {
       name: "Shtime",
       distance: 35,
       price: 30.0,
-      image: pejaImg,
+      image: shtimeImg,
       description:
         "A charming agricultural municipality famous for producing KOSOVA's finest dairy products and golden honey from local apiaries.",
       attractions: [
@@ -693,7 +991,7 @@ const PopularPlaces = () => {
       name: "Kaçanik",
       distance: 65,
       price: 54.0,
-      image: mitrovicaImg,
+      image: kacanikImg,
       description:
         "Strategic border city with North Macedonia, featuring the spectacular Kaçanik Gorge, one of KOSOVA's most scenic natural landmarks.",
       attractions: [
@@ -710,7 +1008,7 @@ const PopularPlaces = () => {
       name: "Kamenica",
       distance: 55,
       price: 46.0,
-      image: gjilanImg,
+      image: kamenicaImg,
       description:
         "Known for beautiful landscapes along the Kamenica River, featuring traditional architecture and nearby medieval churches.",
       attractions: [
@@ -727,7 +1025,7 @@ const PopularPlaces = () => {
       name: "Skenderaj",
       distance: 25,
       price: 22.0,
-      image: gjakovaImg,
+      image: skenderajImg,
       description:
         "Situated in the historic Drenica region, famous for its resistance heritage and rich cultural monuments surrounded by natural beauty.",
       attractions: [
@@ -744,7 +1042,7 @@ const PopularPlaces = () => {
       name: "Fushë Kosova",
       distance: 20,
       price: 18.0,
-      image: prishtinaImg,
+      image: fusheKosovaImg,
       description:
         "Home to KOSOVA's main international airport, serving as the country's gateway with rapid modern development and suburban growth.",
       attractions: [
@@ -761,7 +1059,7 @@ const PopularPlaces = () => {
       name: "Obiliq",
       distance: 15,
       price: 14.0,
-      image: vushtrriImg,
+      image: obiliqImg,
       description:
         "Important industrial center housing KOSOVA's main power plants, featuring beautiful countryside and the historic Gazimestan monument.",
       attractions: [
@@ -778,7 +1076,7 @@ const PopularPlaces = () => {
       name: "Istog",
       distance: 45,
       price: 38.0,
-      image: pejaImg,
+      image: istogImg,
       description:
         "Located in western KOSOVA, renowned for agricultural production of corn and wheat, with the scenic Istog River providing natural beauty.",
       attractions: [
@@ -795,7 +1093,7 @@ const PopularPlaces = () => {
       name: "Klinë",
       distance: 50,
       price: 42.0,
-      image: suharekaImg,
+      image: klinaImg,
       description:
         "Famous for traditional stone architecture and gateway to the Accursed Mountains, featuring an authentic old bazaar with Albanian craftsmanship.",
       attractions: [
@@ -812,7 +1110,7 @@ const PopularPlaces = () => {
       name: "Dragash",
       distance: 95,
       price: 78.0,
-      image: mitrovicaImg,
+      image: dragashImg,
       description:
         "KOSOVA's southernmost paradise surrounded by Šar Mountains, offering pristine lakes, diverse wildlife, and hiking heaven.",
       attractions: [
@@ -829,7 +1127,7 @@ const PopularPlaces = () => {
       name: "Deçan",
       distance: 70,
       price: 58.0,
-      image: mitrovicaImg,
+      image: decanImg,
       description:
         "Home to the UNESCO World Heritage Visoki Dečani Monastery, a stunning 14th-century Orthodox monastery renowned for frescoes.",
       attractions: [
@@ -846,7 +1144,7 @@ const PopularPlaces = () => {
       name: "Junik",
       distance: 75,
       price: 62.0,
-      image: pejaImg,
+      image: junikImg,
       description:
         "A small mountainous municipality near the Albanian border, known for traditional rural lifestyle and excellent hiking opportunities.",
       attractions: [
@@ -863,7 +1161,7 @@ const PopularPlaces = () => {
       name: "Mamushë",
       distance: 85,
       price: 70.0,
-      image: vushtrriImg,
+      image: mamusheImg,
       description:
         "KOSOVA's unique Turkish-majority municipality, maintaining strong Ottoman cultural traditions and distinctive Turkish architecture.",
       attractions: [
@@ -979,6 +1277,34 @@ const PopularPlaces = () => {
       console.log("Collapsing to show popular cities only");
       setShowAllCities(false);
     }
+  };
+
+  // Handle Book Now button click - open vehicle selection
+  const handleBookNow = (city) => {
+    setSelectedCity(city);
+    setShowVehicleSelection(true);
+  };
+
+  // Handle vehicle selection - open booking form
+  const handleSelectVehicle = (vehicle) => {
+    setSelectedVehicle(vehicle);
+    setShowVehicleSelection(false);
+    setShowBookingPopup(true);
+  };
+
+  // Handle booking submission
+  const handleBookingSubmit = (bookingData) => {
+    console.log("Booking submitted:", bookingData);
+    // Here you would typically send the data to your backend
+    setShowBookingPopup(false);
+    setShowNotification(true);
+    setSelectedCity(null);
+    setSelectedVehicle(null);
+
+    // Auto-hide notification after 5 seconds
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 5000);
   };
 
   // Filter places based on search term and distance filter
@@ -1316,12 +1642,26 @@ const PopularPlaces = () => {
 
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <Link
-                        to="/contact"
+                      <button
+                        onClick={() => {
+                          // Find the matching city from allCitiesData
+                          const matchingCity = allCitiesData.find(
+                            (city) =>
+                              city.name.toLowerCase() ===
+                              aiResult.cityName.toLowerCase()
+                          );
+                          if (matchingCity) {
+                            handleBookNow(matchingCity);
+                          } else {
+                            // If not found, create a city object from aiResult
+                            handleBookNow({
+                              name: aiResult.cityName,
+                              distance: aiResult.distance,
+                              price: aiResult.price,
+                            });
+                          }
+                        }}
                         className="flex-1 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center"
-                        onClick={() =>
-                          window.scrollTo({ top: 0, behavior: "smooth" })
-                        }
                       >
                         <svg
                           className="w-5 h-5 mr-2"
@@ -1337,7 +1677,7 @@ const PopularPlaces = () => {
                           />
                         </svg>
                         Book Ride to {aiResult.cityName}
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 )}
@@ -1448,11 +1788,8 @@ const PopularPlaces = () => {
                   </div>
 
                   <div className="flex flex-col gap-3">
-                    <Link
-                      to="/contact"
-                      onClick={() =>
-                        window.scrollTo({ top: 0, behavior: "smooth" })
-                      }
+                    <button
+                      onClick={() => handleBookNow(place)}
                       className="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-bold rounded-2xl hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 transform hover:scale-105"
                     >
                       <svg
@@ -1469,7 +1806,7 @@ const PopularPlaces = () => {
                         />
                       </svg>
                       Book Now
-                    </Link>
+                    </button>
                   </div>
                 </div>
 
@@ -1524,6 +1861,69 @@ const PopularPlaces = () => {
           </div>
         </div>
       </section>
+
+      {/* Vehicle Selection Popup */}
+      <VehicleSelectionPopup
+        city={selectedCity}
+        isOpen={showVehicleSelection}
+        onClose={() => {
+          setShowVehicleSelection(false);
+          setSelectedCity(null);
+        }}
+        onSelectVehicle={handleSelectVehicle}
+      />
+
+      {/* Booking Popup */}
+      <BookingPopup
+        city={selectedCity}
+        vehicle={selectedVehicle}
+        isOpen={showBookingPopup}
+        onClose={() => {
+          setShowBookingPopup(false);
+          setSelectedCity(null);
+          setSelectedVehicle(null);
+        }}
+        onSubmit={handleBookingSubmit}
+      />
+
+      {/* Booking Confirmation Notification */}
+      {showNotification && (
+        <div className="fixed top-4 right-4 z-50">
+          <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-sm border-l-4 border-green-500 animate-fade-in">
+            <div className="flex justify-between items-start">
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  Thank You for Choosing OSMANI Taxi! 🚗
+                </h3>
+                <p className="text-gray-600">
+                  We've received your booking request and will send you a
+                  confirmation email with all the details within 10 minutes. Our
+                  premium service team is already preparing your personalized
+                  transportation solution.
+                </p>
+              </div>
+              <button
+                onClick={() => setShowNotification(false)}
+                className="text-gray-500 hover:text-gray-700 ml-4"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Scroll to Top Button */}
       <ScrollToTopButton />

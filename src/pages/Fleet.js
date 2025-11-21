@@ -6,6 +6,7 @@ import {
 } from "../hooks/useScrollAnimation";
 import ScrollToTopButton from "../contexts/ScrollToTopButton";
 import ScrollDownButton from "../contexts/ScrollDownButton";
+import { vehicles } from "../data/vehicles";
 
 // Counter animation component
 const AnimatedCounter = ({
@@ -318,117 +319,6 @@ const Fleet = () => {
     comfort: false,
     support: false,
   });
-
-  const vehicles = [
-    {
-      type: "Red Golf II Taxi",
-      image:
-        "https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      description:
-        "Our iconic Red Golf II taxis provide reliable and comfortable transportation for everyday needs. These well-maintained vehicles are perfect for city travel with their compact size and efficient performance.",
-      features: [
-        "4 passengers maximum",
-        "2 large luggage pieces",
-        "Air conditioning",
-        "Professional driver",
-        "Fuel-efficient engine",
-        "Easy city maneuverability",
-      ],
-      price: "€1.00/km",
-      gradient: "from-red-500 to-orange-500",
-      badge: "Classic Choice",
-    },
-    {
-      type: "Mercedes Benz C220",
-      image:
-        "https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
-      description:
-        "Experience luxury transportation with our Mercedes Benz C220. Featuring premium interiors, advanced comfort systems, and professional chauffeur service for discerning customers.",
-      features: [
-        "4 passengers in luxury",
-        "3 large luggage pieces",
-        "Premium leather seats",
-        "Wi-Fi and charging ports",
-        "Climate control system",
-        "Professional chauffeur",
-      ],
-      price: "€2.50/km",
-      gradient: "from-gray-700 to-gray-900",
-      badge: "Luxury Choice",
-    },
-    {
-      type: "Family Luxury Minivan",
-      image:
-        "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
-      description:
-        "Spacious luxury minivans designed for families and groups, combining comfort with ample space for all your needs.",
-      features: [
-        "7-8 passengers comfortably",
-        "5+ large luggage pieces",
-        "Individual climate control",
-        "Entertainment system",
-        "Ample legroom",
-        "Child safety features",
-      ],
-      price: "€2.20/km",
-      gradient: "from-green-500 to-emerald-400",
-      badge: "Family Favorite",
-    },
-    {
-      type: "Premium All-Terrain SUV",
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
-      description:
-        "Conquer any terrain in style with our premium SUVs, perfect for adventures and challenging weather conditions.",
-      features: [
-        "5-7 passengers",
-        "4 large luggage pieces",
-        "All-wheel drive capability",
-        "Premium sound system",
-        "Advanced safety features",
-        "Roof rack for extra storage",
-      ],
-      price: "€2.00/km",
-      gradient: "from-orange-500 to-red-400",
-      badge: "Adventure Ready",
-    },
-    {
-      type: "Standard Taxi Sedan",
-      image:
-        "https://images.unsplash.com/photo-1549399542-7e7f8c7a3d4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      description:
-        "Reliable and comfortable standard taxi service for everyday transportation needs. Clean, well-maintained vehicles for your convenience.",
-      features: [
-        "4 passengers",
-        "2 large luggage pieces",
-        "Air conditioning",
-        "Professional driver",
-        "Clean interior",
-        "On-time service guarantee",
-      ],
-      price: "€1.20/km",
-      gradient: "from-blue-500 to-cyan-400",
-      badge: "Best Value",
-    },
-    {
-      type: "Executive Business Sedan",
-      image:
-        "https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      description:
-        "Elevate your business travel with our executive sedans featuring premium leather interiors and advanced connectivity.",
-      features: [
-        "4 passengers in luxury",
-        "3 large luggage pieces",
-        "Premium leather seats",
-        "Business-class Wi-Fi",
-        "Mobile office setup",
-        "Professional chauffeur",
-      ],
-      price: "€1.80/km",
-      gradient: "from-purple-500 to-indigo-400",
-      badge: "Executive Choice",
-    },
-  ];
 
   const standards = [
     {
