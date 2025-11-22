@@ -18,7 +18,6 @@ import Services from "./pages/Services";
 import Fleet from "./pages/Fleet";
 import Contact from "./pages/Contact";
 import PopularPlaces from "./pages/PopularPlaces";
-import RouteCalculator from "./pages/RouteCalculator";
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component {
@@ -83,7 +82,6 @@ function App() {
               <Route path="/fleet" element={<Fleet />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/popular-places" element={<PopularPlaces />} />
-              <Route path="/route-calculator" element={<RouteCalculator />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </main>

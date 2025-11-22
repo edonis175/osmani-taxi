@@ -7,7 +7,7 @@ import {
 } from "../hooks/useScrollAnimation";
 import ScrollToTopButton from "../contexts/ScrollToTopButton";
 import ScrollDownButton from "../contexts/ScrollDownButton";
-import CarBanner from "../assets/images/Carbanner.jpg";
+import MercedesBanner from "../assets/images/Mercedes-Banner.jpg";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -121,7 +121,7 @@ const Home = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${CarBanner})`,
+            backgroundImage: `url(${MercedesBanner})`,
           }}
         >
           <div
@@ -510,80 +510,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute top-4 left-4 w-20 h-20 border-2 border-yellow-400/20 rounded-full"></div>
-            <div className="absolute bottom-4 right-4 w-16 h-16 border-2 border-yellow-400/20 rounded-full"></div>
-          </div>
-
-          {/* Call-to-Action with Modern Design */}
-          <div
-            className={`scroll-animate mt-16 text-center ${getAnimationClasses(
-              "up",
-              visibleItems.includes("creative-cta")
-            )}`}
-            data-id="creative-cta"
-            style={getAnimationStyle(500)}
-          >
-            <div className="inline-flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/route-calculator"
-                className="group bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-600 hover:to-orange-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-115 hover:shadow-xl hover:-translate-y-2"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              >
-                <span className="flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 mr-2 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
-                  Calculate Your Route
-                  <svg
-                    className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </span>
-              </Link>
-
-              <Link
-                to="/popular-places"
-                className={`group font-montserrat py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-115 hover:shadow-lg hover:-translate-y-2 bg-white/20 backdrop-blur-md border-2 border-white/70 text-gray-800 hover:text-yellow-600 hover:border-white hover:bg-white/30 shadow-lg font-bold`}
-              >
-                <span className="flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 mr-2 group-hover:animate-bounce transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                  </svg>
-                  Explore KOSOVA
-                </span>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -594,7 +520,7 @@ const Home = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')`,
+            backgroundImage: `url(${require("../assets/images/Why-Choose.BannerBg.png")})`,
           }}
         >
           <div
@@ -995,7 +921,7 @@ const Home = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1570125909232-eb263c188f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')`,
+            backgroundImage: `url(${require("../assets/images/CTABgBanner.png")})`,
           }}
         >
           <div className="absolute inset-0 "></div>

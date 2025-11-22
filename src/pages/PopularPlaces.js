@@ -1250,19 +1250,11 @@ const PopularPlaces = () => {
 
   // Handle toggle cities and position at 4th-6th city area with slow smooth scroll
   const handleToggleCities = () => {
-    console.log("Toggle clicked! Current state:", {
-      showAllCities,
-      searchTerm,
-      filter,
-    });
-
     if (!showAllCities) {
       // When expanding to show all cities, position at 4th city so user sees 4,5,6 boxes
-      console.log("Expanding to show all cities");
       setShowAllCities(true);
       setTimeout(() => {
         const fourthCity = document.querySelector('[data-city-index="3"]');
-        console.log("Looking for 4th city:", fourthCity);
         if (fourthCity) {
           // Smooth and slow scroll that stops a little earlier
           fourthCity.scrollIntoView({
@@ -1274,7 +1266,6 @@ const PopularPlaces = () => {
       }, 300); // Longer delay for smoother experience
     } else {
       // When collapsing to show only popular cities, just hide them
-      console.log("Collapsing to show popular cities only");
       setShowAllCities(false);
     }
   };
@@ -1294,7 +1285,6 @@ const PopularPlaces = () => {
 
   // Handle booking submission
   const handleBookingSubmit = (bookingData) => {
-    console.log("Booking submitted:", bookingData);
     // Here you would typically send the data to your backend
     setShowBookingPopup(false);
     setShowNotification(true);
@@ -1309,12 +1299,7 @@ const PopularPlaces = () => {
 
   // Filter places based on search term and distance filter
   const currentCitiesData = showAllCities ? allCitiesData : popularCitiesData;
-  console.log(
-    "Current cities data length:",
-    currentCitiesData.length,
-    "showAllCities:",
-    showAllCities
-  );
+  // Debug: currentCitiesData length and showAllCities are intentionally omitted in production.
 
   const filteredPlaces = currentCitiesData
     .filter(
@@ -1334,14 +1319,7 @@ const PopularPlaces = () => {
       return false;
     });
 
-  console.log(
-    "Filtered places length:",
-    filteredPlaces.length,
-    "searchTerm:",
-    searchTerm,
-    "filter:",
-    filter
-  );
+  // Debug: filtered places metrics omitted in production.
 
   return (
     <div className="min-h-screen overflow-hidden">
@@ -1448,7 +1426,7 @@ const PopularPlaces = () => {
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl shadow-2xl p-8 mb-8 border border-gray-700">
               <div className="flex flex-col lg:flex-row gap-6">
                 <div className="lg:w-2/3">
-                  <label className="block text-gray-300 font-semibold mb-3 flex items-center">
+                  <label className=" text-gray-300 font-semibold mb-3 flex items-center">
                     <svg
                       className="w-6 h-6 text-yellow-400 mr-2"
                       fill="none"
@@ -1508,7 +1486,7 @@ const PopularPlaces = () => {
                 </div>
 
                 <div className="lg:w-1/3">
-                  <label className="block text-gray-300 font-semibold mb-3 flex items-center">
+                  <label className=" text-gray-300 font-semibold mb-3 flex items-center">
                     <svg
                       className="w-6 h-6 text-cyan-400 mr-2"
                       fill="none"

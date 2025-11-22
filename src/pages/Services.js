@@ -88,8 +88,7 @@ const Services = () => {
         "Multiple payment options including digital",
         "Luxury sedans with premium amenities",
       ],
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
+      image: require("../assets/images/PremiumCity-Card1.png"),
       price: "€1.20/km",
     },
     {
@@ -241,10 +240,6 @@ const Services = () => {
   const handleSubmitBooking = (e) => {
     e.preventDefault();
     // In a real app, you would send this data to your backend
-    console.log("Booking submitted:", {
-      service: selectedService,
-      bookingInfo,
-    });
     alert(
       `Thank you for booking ${selectedService.title}! We'll contact you shortly to confirm your reservation.`
     );
