@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/osmani-taxi/static/css/main.4042ed85.css",
-    "main.js": "/osmani-taxi/static/js/main.3ebd7735.js",
-    "static/js/488.d80753d7.chunk.js": "/osmani-taxi/static/js/488.d80753d7.chunk.js",
+    "main.css": "/osmani-taxi/static/css/main.2862545e.css",
+    "main.js": "/osmani-taxi/static/js/main.82338f07.js",
+    "static/js/488.50d88b80.chunk.js": "/osmani-taxi/static/js/488.50d88b80.chunk.js",
     "static/media/Mamushe.jpg": "/osmani-taxi/static/media/Mamushe.da587baf1b4cbe1ad626.jpg",
     "static/media/mitrovica.jpeg": "/osmani-taxi/static/media/mitrovica.80cc0ca307388cb6be5b.jpeg",
     "static/media/Fushë_Kosovë.png": "/osmani-taxi/static/media/Fushë_Kosovë.81ecd15e50b325e02196.png",
     "static/media/gjakova.jpg": "/osmani-taxi/static/media/gjakova.a1e72b4150c4f1358854.jpg",
     "static/media/Rahoveci.png": "/osmani-taxi/static/media/Rahoveci.53c0ca5dfc8b4857070a.png",
+    "static/media/Why-Choose.BannerBg.png": "/osmani-taxi/static/media/Why-Choose.BannerBg.ebe4eba25ba0a3792651.png",
     "static/media/suhareka.jpg": "/osmani-taxi/static/media/suhareka.c9b552b1f6577ad18c15.jpg",
     "static/media/prizren.jpg": "/osmani-taxi/static/media/prizren.a4c02a8480e104271d1f.jpg",
     "static/media/gjilan.jpg": "/osmani-taxi/static/media/gjilan.3d5726fed5f1a2c4e5ee.jpg",
     "static/media/ferizaj.jpg": "/osmani-taxi/static/media/ferizaj.ee191494a3f1391329a1.jpg",
+    "static/media/PremiumCity-Card1.png": "/osmani-taxi/static/media/PremiumCity-Card1.91438580580ba3b07045.png",
     "static/media/Junik.jpg": "/osmani-taxi/static/media/Junik.30da38993e988961a29c.jpg",
+    "static/media/Mercedes-Banner.jpg": "/osmani-taxi/static/media/Mercedes-Banner.cb691404fc629532478f.jpg",
     "static/media/peja.jpg": "/osmani-taxi/static/media/peja.695b218f19b71b5a9eb8.jpg",
     "static/media/Skenderaj.png": "/osmani-taxi/static/media/Skenderaj.9b8a2f5bbe27ab8da809.png",
     "static/media/Minivan.png": "/osmani-taxi/static/media/Minivan.ec232932d239e97559d4.png",
@@ -20,6 +23,7 @@
     "static/media/Shtime.png": "/osmani-taxi/static/media/Shtime.412ec9ebebefefcabc9d.png",
     "static/media/Decan.png": "/osmani-taxi/static/media/Decan.790ce9ddda203ba5ab99.png",
     "static/media/Sedan-taxi.jpg": "/osmani-taxi/static/media/Sedan-taxi.78ac44737487289725fd.jpg",
+    "static/media/CTABgBanner.png": "/osmani-taxi/static/media/CTABgBanner.c9725d9c80121aeb6479.png",
     "static/media/vushtrri.jpg": "/osmani-taxi/static/media/vushtrri.b623b8cc63576e6b5eeb.jpg",
     "static/media/Kaçanik.png": "/osmani-taxi/static/media/Kaçanik.8de33081ec358e069b5f.png",
     "static/media/malisheva.jpg": "/osmani-taxi/static/media/malisheva.3f97f444d2135ad53dbd.jpg",
@@ -38,12 +42,12 @@
     "static/media/osmaniTlogo.png": "/osmani-taxi/static/media/osmaniTlogo.39de9e1175fe9aab69cd.png",
     "static/media/osmanileaf.png": "/osmani-taxi/static/media/osmanileaf.5317ab89a3aa81baa079.png",
     "index.html": "/osmani-taxi/index.html",
-    "main.4042ed85.css.map": "/osmani-taxi/static/css/main.4042ed85.css.map",
-    "main.3ebd7735.js.map": "/osmani-taxi/static/js/main.3ebd7735.js.map",
-    "488.d80753d7.chunk.js.map": "/osmani-taxi/static/js/488.d80753d7.chunk.js.map"
+    "main.2862545e.css.map": "/osmani-taxi/static/css/main.2862545e.css.map",
+    "main.82338f07.js.map": "/osmani-taxi/static/js/main.82338f07.js.map",
+    "488.50d88b80.chunk.js.map": "/osmani-taxi/static/js/488.50d88b80.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4042ed85.css",
-    "static/js/main.3ebd7735.js"
+    "static/css/main.2862545e.css",
+    "static/js/main.82338f07.js"
   ]
 }
