@@ -254,7 +254,7 @@ const Services = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url(${require("../assets/images/Carbanner.jpg")})`,
+            backgroundImage: `url(${require("../assets/images/Mercedes-Banner.jpg")})`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black/0 via-black/25 to-transparent"></div>

@@ -374,7 +374,7 @@ const Contact = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed "
           style={{
-            backgroundImage: `url(${require("../assets/images/Carbanner.jpg")})`,
+            backgroundImage: `url(${require("../assets/images/Mercedes-Banner.jpg")})`,
           }}
         >
           <div className="absolute inset-0 "></div>

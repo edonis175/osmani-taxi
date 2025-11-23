@@ -291,57 +291,6 @@ const TimelineSection = ({ milestones }) => {
 const About = () => {
   const visibleItems = useScrollAnimation();
 
-  const team = [
-    {
-      name: "Shaip Osmani",
-      role: "Founder & CEO",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-      bio: "Visionary leader with 20+ years in transportation. Founded OSMANI with a mission to revolutionize taxi services in KOSOVA through innovation and exceptional customer service.",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        instagram: "#",
-      },
-    },
-    {
-      name: "Arlind Berisha",
-      role: "Operations Director",
-      image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-      bio: "Operations expert ensuring seamless service delivery. Oversees fleet management, driver training, and customer experience optimization.",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        instagram: "#",
-      },
-    },
-    {
-      name: "Liridona Gashi",
-      role: "Technology Director",
-      image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-      bio: "Tech innovator driving OSMANI's digital transformation. Leads development of AI routing algorithms and customer-facing applications.",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        instagram: "#",
-      },
-    },
-    {
-      name: "Blerim Krasniqi",
-      role: "Customer Experience",
-      image:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-      bio: "Customer advocate ensuring every journey exceeds expectations. Manages quality assurance and customer feedback programs.",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        instagram: "#",
-      },
-    },
-  ];
-
   const milestones = [
     {
       year: "2005",
@@ -381,60 +330,6 @@ const About = () => {
     },
   ];
 
-  // Counter animation component
-  const AnimatedCounter = ({
-    end,
-    duration = 2000,
-    suffix = "",
-    prefix = "",
-  }) => {
-    const [count, setCount] = useState(0);
-    const [hasStarted, setHasStarted] = useState(false);
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting && !hasStarted) {
-            setHasStarted(true);
-            const startTime = Date.now();
-            const startValue = 0;
-
-            const updateCount = () => {
-              const now = Date.now();
-              const progress = Math.min((now - startTime) / duration, 1);
-              const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-              const current = Math.floor(
-                startValue + (end - startValue) * easeOutCubic
-              );
-
-              setCount(current);
-
-              if (progress < 1) {
-                requestAnimationFrame(updateCount);
-              }
-            };
-
-            updateCount();
-          }
-        },
-        { threshold: 0.5 }
-      );
-
-      const element = document.getElementById(`counter-about-${end}-${suffix}`);
-      if (element) observer.observe(element);
-
-      return () => observer.disconnect();
-    }, [end, duration, suffix, hasStarted]);
-
-    return (
-      <span id={`counter-about-${end}-${suffix}`}>
-        {prefix}
-        {count}
-        {suffix}
-      </span>
-    );
-  };
-
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
@@ -443,7 +338,7 @@ const About = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url(${require("../assets/images/Carbanner.jpg")})`,
+            backgroundImage: `url(${require("../assets/images/Mercedes-Banner.jpg")})`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/20 to-transparent"></div>
