@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/osmani-taxi/static/css/main.2862545e.css",
-    "main.js": "/osmani-taxi/static/js/main.82338f07.js",
-    "static/js/488.50d88b80.chunk.js": "/osmani-taxi/static/js/488.50d88b80.chunk.js",
+    "main.js": "/osmani-taxi/static/js/main.b05e4229.js",
+    "static/js/488.d80753d7.chunk.js": "/osmani-taxi/static/js/488.d80753d7.chunk.js",
     "static/media/Mamushe.jpg": "/osmani-taxi/static/media/Mamushe.da587baf1b4cbe1ad626.jpg",
     "static/media/mitrovica.jpeg": "/osmani-taxi/static/media/mitrovica.80cc0ca307388cb6be5b.jpeg",
     "static/media/Fushë_Kosovë.png": "/osmani-taxi/static/media/Fushë_Kosovë.81ecd15e50b325e02196.png",
@@ -31,7 +31,6 @@
     "static/media/Istog.png": "/osmani-taxi/static/media/Istog.5deef4adf5dd3b04e421.png",
     "static/media/Kamenica.png": "/osmani-taxi/static/media/Kamenica.adc376c731e4357bda36.png",
     "static/media/podujeva.jpg": "/osmani-taxi/static/media/podujeva.5dffd666e456d52e1d1f.jpg",
-    "static/media/Carbanner.jpg": "/osmani-taxi/static/media/Carbanner.10ebabbf680a510d206b.jpg",
     "static/media/Dragash.png": "/osmani-taxi/static/media/Dragash.570ddaf8fcd5c889c9aa.png",
     "static/media/Bussines-Sedan-Taxi.png": "/osmani-taxi/static/media/Bussines-Sedan-Taxi.1064c079d3241d864405.png",
     "static/media/Obiliq.png": "/osmani-taxi/static/media/Obiliq.068b775fc1d069260ef5.png",
@@ -43,11 +42,11 @@
     "static/media/osmanileaf.png": "/osmani-taxi/static/media/osmanileaf.5317ab89a3aa81baa079.png",
     "index.html": "/osmani-taxi/index.html",
     "main.2862545e.css.map": "/osmani-taxi/static/css/main.2862545e.css.map",
-    "main.82338f07.js.map": "/osmani-taxi/static/js/main.82338f07.js.map",
-    "488.50d88b80.chunk.js.map": "/osmani-taxi/static/js/488.50d88b80.chunk.js.map"
+    "main.b05e4229.js.map": "/osmani-taxi/static/js/main.b05e4229.js.map",
+    "488.d80753d7.chunk.js.map": "/osmani-taxi/static/js/488.d80753d7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2862545e.css",
-    "static/js/main.82338f07.js"
+    "static/js/main.b05e4229.js"
   ]
 }
